@@ -1,52 +1,67 @@
-/* RESET BÁSICO */
+/* --- 1. RESET Y AJUSTES GENERALES --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    scroll-behavior: smooth; /* Para que al hacer clic en el menú, baje suavemente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #0b1120; /* Azul muy oscuro, casi negro */
+    background-color: #0b1120;
     color: #f8fafc;
+    overflow-x: hidden;
 }
 
-/* --- MENÚ DE NAVEGACIÓN --- */
+/* --- 2. MENÚ Y LOGO --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(11, 17, 32, 0.9); /* Ligeramente transparente */
-    position: fixed; /* Se queda fijo al hacer scroll */
+    padding: 15px 50px;
+    background-color: rgba(11, 17, 32, 0.95);
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Efecto cristal moderno */
+    border-bottom: 1px solid #1e293b;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .logo span {
-    color: #10b981; /* Verde esmeralda/césped */
+    color: #10b981;
+}
+
+/* AQUÍ ESTÁ EL ARREGLO DEL LOGO */
+.logo-img {
+    height: 75px; /* Alto fijo para que no se haga gigante */
+    width: auto;  /* El ancho se adapta solo para no deformarse */
+    max-width: 150px; /* Por si acaso */
+    object-fit: contain;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #cbd5e1;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
@@ -54,18 +69,21 @@ body {
     color: #10b981;
 }
 
-/* --- SECCIÓN INICIO (HERO) --- */
+/* --- 3. SECCIÓN INICIO (HERO) --- */
 .hero {
-    height: 100vh; /* Ocupa toda la pantalla */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: linear-gradient(rgba(11, 17, 32, 0.8), rgba(11, 17, 32, 0.9)), 
-                url('https://images.unsplash.com/photo-1518605328468-ebecfa12df13?q=80&w=2000&auto=format&fit=crop') center/cover;
-    /* ↑ He puesto una imagen de césped de fondo provisional de Unsplash ↑ */
+    
+    /* AQUÍ PONEMOS LA FOTO DE SERGIO DE FONDO */
+    /* El degradado oscuro (linear-gradient) sirve para que las letras blancas se puedan leer encima de la foto */
+    background: linear-gradient(rgba(11, 17, 32, 0.6), rgba(11, 17, 32, 0.95)), 
+                url('../img/perfil.jpg') center/cover no-repeat;
 }
+
 
 .hero-contenido h1 {
     font-size: 50px;
@@ -77,12 +95,11 @@ body {
 }
 
 .hero-contenido p {
-    font-size: 20px;
+    font-size: 22px;
     color: #94a3b8;
     margin-bottom: 40px;
 }
 
-/* --- BOTONES --- */
 .botones-hero {
     display: flex;
     gap: 20px;
@@ -96,8 +113,6 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
 }
 
 .btn-principal {
@@ -120,4 +135,127 @@ body {
 .btn-secundario:hover {
     border-color: #10b981;
     color: #10b981;
+}
+
+/* --- 4. SECCIÓN PERFIL Y FOTO --- */
+.seccion-perfil {
+    padding: 100px 20px;
+    background-color: #0b1120;
+}
+
+.perfil-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* AQUÍ ESTÁ EL ARREGLO DE LA FOTO DEL ENTRENADOR */
+.perfil-imagen {
+    flex: 1;
+    width: 100%;
+    max-width: 450px; /* Límite para que jamás se vea gigante */
+    position: relative;
+}
+
+.perfil-imagen img {
+    width: 100%; /* Se adapta a la caja de 450px */
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    display: block;
+}
+
+.decoracion-imagen {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #10b981;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.perfil-texto {
+    flex: 1;
+}
+
+.perfil-texto h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.perfil-texto h2 span {
+    color: #10b981;
+}
+
+.perfil-texto h3 {
+    font-size: 20px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.perfil-texto p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+.stat-box h4 {
+    color: #10b981;
+    font-size: 24px;
+}
+
+.stat-box p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* --- 5. ADAPTACIÓN A TELÉFONOS MÓVILES --- */
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .logo-img {
+        height: 40px; /* Un poco más pequeño en móvil */
+    }
+
+    .perfil-contenedor {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .decoracion-imagen {
+        top: 15px;
+        left: 15px;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+    }
 }
