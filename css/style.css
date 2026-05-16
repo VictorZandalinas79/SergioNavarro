@@ -69,19 +69,44 @@ body {
     color: #10b981;
 }
 
-/* --- 3. SECCIÓN INICIO (HERO) --- */
+/* --- ESTILO PARA EL VÍDEO DE FONDO --- */
 .hero {
+    position: relative; /* Para que el vídeo se posicione respecto a esto */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden; /* Corta lo que sobre del vídeo */
+    color: white;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2; /* Lo manda al fondo del todo */
+    transform: translate(-50%, -50%); /* Lo centra perfectamente */
+    object-fit: cover; /* Hace que el vídeo cubra todo sin deformarse */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 17, 32, 0.7); /* Oscurece el vídeo para que se lea el texto */
+    z-index: -1; /* Encima del vídeo pero debajo del texto */
+}
+
+.hero-contenido {
+    z-index: 1;
     padding: 0 20px;
-    
-    /* AQUÍ PONEMOS LA FOTO DE SERGIO DE FONDO */
-    /* El degradado oscuro (linear-gradient) sirve para que las letras blancas se puedan leer encima de la foto */
-    background: linear-gradient(rgba(11, 17, 32, 0.6), rgba(11, 17, 32, 0.95)), 
-                url('../img/perfil.jpg') center/cover no-repeat;
 }
 
 
