@@ -33,14 +33,15 @@
         </div>
     </nav>
 
-    <!-- 1. INICIO -->
+    <!-- 1. INICIO (CORREGIDO PARA CHROME) -->
     <header id="inicio" class="hero">
         <video autoplay muted loop playsinline class="video-bg">
             <source src="img/video-fondo.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
 
-        <div class="hero-contenido" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- Clase anim-fade-in en lugar de data-aos -->
+        <div class="hero-contenido anim-fade-in">
             <h1 class="translatable" data-es="Liderazgo, <span>Innovación</span> y Rendimiento" data-en="Leadership, <span>Innovation</span> & Performance" data-fr="Leadership, <span>Innovation</span> et Performance">Liderazgo, <span>Innovación</span> y Rendimiento</h1>
             <p class="translatable" data-es="Entrenador UEFA Pro | Experiencia Internacional de Alto Nivel" data-en="UEFA Pro Coach | Top-Level International Experience" data-fr="Entraîneur UEFA Pro | Expérience Internationale de Haut Niveau">Entrenador UEFA Pro | Experiencia Internacional de Alto Nivel</p>
             <div class="botones-hero">
@@ -48,8 +49,8 @@
             </div>
         </div>
 
-        <!-- ESCUDOS EN EL INICIO (Incluido el Levante) -->
-        <div class="escudos-hero" data-aos="fade-up" data-aos-delay="500">
+        <!-- Clase anim-fade-up en lugar de data-aos -->
+        <div class="escudos-hero anim-fade-up">
             <img src="img/escudos/Villarreal CF.png" alt="Villarreal CF" title="Villarreal CF">
             <img src="img/escudos/Athletic.png" alt="Athletic Club" title="Athletic Club">
             <img src="img/escudos/Levante.png" alt="Levante UD" title="Levante UD">
