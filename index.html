@@ -17,19 +17,27 @@
             <div class="logo-text">Sergio <span>Navarro</span></div>
         </div>
         
-        <ul class="nav-links">
-            <li><a href="#inicio" class="translatable" data-es="Inicio" data-en="Home" data-fr="Accueil">Inicio</a></li>
-            <li><a href="#perfil" class="translatable" data-es="Perfil" data-en="Profile" data-fr="Profil">Perfil</a></li>
-            <li><a href="#tactica" class="translatable" data-es="Idea de Juego" data-en="Philosophy" data-fr="Philosophie">Idea de Juego</a></li>
-            <li><a href="#trayectoria" class="translatable" data-es="Trayectoria" data-en="Career" data-fr="Carrière">Trayectoria</a></li>
-            <li><a href="#staff" class="translatable" data-es="Staff" data-en="Staff" data-fr="Staff">Staff</a></li>
-            <li><a href="#metodologia" class="translatable" data-es="Metodología" data-en="Methodology" data-fr="Méthodologie">Metodología</a></li>
-        </ul>
+        <!-- 1. NUEVO: Botón Hamburguesa -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-        <div class="lang-selector">
-            <button class="lang-btn active" data-lang="es" title="Español">🇪🇸</button>
-            <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
-            <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+        <!-- 2. NUEVO: Esta caja "nav-content" envuelve todo para ocultarlo en móvil -->
+        <div class="nav-content" id="nav-content">
+            <ul class="nav-links">
+                <li><a href="#inicio" class="translatable" data-es="Inicio" data-en="Home" data-fr="Accueil">Inicio</a></li>
+                <li><a href="#perfil" class="translatable" data-es="Perfil" data-en="Profile" data-fr="Profil">Perfil</a></li>
+                <li><a href="#tactica" class="translatable" data-es="Idea de Juego" data-en="Philosophy" data-fr="Philosophie">Idea de Juego</a></li>
+                <li><a href="#trayectoria" class="translatable" data-es="Trayectoria" data-en="Career" data-fr="Carrière">Trayectoria</a></li>
+                <li><a href="#staff" class="translatable" data-es="Staff" data-en="Staff" data-fr="Staff">Staff</a></li>
+                <li><a href="#metodologia" class="translatable" data-es="Metodología" data-en="Methodology" data-fr="Méthodologie">Metodología</a></li>
+            </ul>
+
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="es" title="Español">🇪🇸</button>
+                <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+            </div>
         </div>
     </nav>
 
