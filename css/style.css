@@ -456,3 +456,56 @@ body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hi
 .lista-detalles strong {
     color: var(--primary);
 }
+
+/* ========================================================
+   PARCHES DE COMPATIBILIDAD (GOOGLE CHROME / EDGE)
+   ======================================================== */
+
+/* 1. ARREGLO PARA VÍDEOS REDONDOS EN CHROME 
+   (Chrome ignora el overflow:hidden en vídeos salvo que se fuerce por hardware) */
+.staff-media {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translateZ(0);
+    isolation: isolate;
+}
+
+.staff-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Forzamos el radio al propio vídeo en Chrome */
+}
+
+/* 2. ARREGLO PARA EFECTO CRISTAL EN EL MENÚ (Filtros WebKit) */
+.navbar {
+    -webkit-backdrop-filter: blur(10px);
+}
+.modal-overlay {
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* 3. ARREGLO PARA QUE LAS PIZARRAS (SVG) NO SE APLASTEN EN CHROME */
+.pizarra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1; /* Obliga a Chrome a mantener la pizarra cuadrada */
+}
+
+.dibujo-tactico {
+    width: 100%;
+    height: 100%;
+}
+
+/* 4. ARREGLO PARA QUE LAS FOTOS DEL HERO (ESCUDOS) NO SE DEFORMEN */
+.escudos-hero img {
+    -webkit-user-drag: none;
+    image-rendering: -webkit-optimize-contrast; /* Mejora la nitidez en Chrome */
+}
+
+/* 5. PREVENIR SALTOS DE LÍNEA RAROS EN CHROME EN EL TIMELINE */
+.timeline-item {
+    -webkit-box-sizing: border-box;
+}
