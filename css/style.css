@@ -660,3 +660,37 @@ body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hi
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+
+/* ========================================================
+   LOGO GRANDE EN EL HERO (DEBAJO DEL BOTÓN)
+   ======================================================== */
+.logo-hero-container {
+    margin-top: 50px; /* Separación desde el botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-hero-grande {
+    width: 100%;
+    max-width: 250px; /* Tamaño máximo en ordenadores */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6)); /* Sombra para que se lea bien sobre el vídeo */
+    opacity: 0.9;
+    transition: transform 0.4s ease;
+}
+
+.logo-hero-grande:hover {
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+/* En móviles lo hacemos un poco más pequeño para que no ocupe toda la pantalla */
+@media screen and (max-width: 768px) {
+    .logo-hero-container {
+        margin-top: 30px;
+    }
+    .logo-hero-grande {
+        max-width: 220px; 
+    }
+}
