@@ -3,90 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Navarro | Entrenador UEFA Pro</title>
-    <!-- AQUÍ SE CONECTA EL DISEÑO -->
-    <link rel="stylesheet" href="css/style.css?v=3.0">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Sergio Navarro | UEFA Pro Coach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="navbar">
         <div class="logo">
-            <!-- El logo con tamaño controlado -->
-            <img src="img/logo.png" alt="Logo" style="max-width: 80px; height: auto; max-height: 50px; object-fit: contain;">
-            
-            <!-- El nombre que se había borrado -->
-            <div style="display: inline-block; margin-left: 10px;">
-                Sergio <span style="color: #10b981;">Navarro</span>
-            </div>
+            <img src="img/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo-text">Sergio <span>Navarro</span></div>
         </div>
+        
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#perfil">Perfil</a></li>
-            <li><a href="#metodologia">Metodología</a></li>
-            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#inicio" class="translatable" data-es="Inicio" data-en="Home" data-fr="Accueil">Inicio</a></li>
+            <li><a href="#perfil" class="translatable" data-es="Perfil" data-en="Profile" data-fr="Profil">Perfil</a></li>
+            <li><a href="#tactica" class="translatable" data-es="Idea de Juego" data-en="Philosophy" data-fr="Philosophie">Idea de Juego</a></li>
+            <li><a href="#trayectoria" class="translatable" data-es="Trayectoria" data-en="Career" data-fr="Carrière">Trayectoria</a></li>
+            <li><a href="#staff" class="translatable" data-es="Staff" data-en="Staff" data-fr="Staff">Staff</a></li>
+            <li><a href="#metodologia" class="translatable" data-es="Metodología" data-en="Methodology" data-fr="Méthodologie">Metodología</a></li>
         </ul>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" data-lang="es" title="Español">🇪🇸</button>
+            <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+            <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+        </div>
     </nav>
 
-    <!-- SECCIÓN DE INICIO (HERO) -->
+    <!-- 1. INICIO -->
     <header id="inicio" class="hero">
-        <!-- El vídeo de fondo -->
-        <video autoplay muted loop playsinline poster="img/perfil.jpg" class="video-bg">
+        <video autoplay muted loop playsinline class="video-bg">
             <source src="img/video-fondo.mp4" type="video/mp4">
-            Tu navegador no soporta vídeo.
         </video>
-
-        <!-- Capa oscura para que el texto se lea bien -->
         <div class="overlay"></div>
 
-        <!-- Contenido encima del vídeo -->
-        <div class="hero-contenido">
-            <h1><span>Método</span> , Visión, <span>Impacto</span></h1>
-            <p>Entrenador UEFA Pro | Analista Táctico</p>
+        <div class="hero-contenido" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="translatable" data-es="Liderazgo, <span>Innovación</span> y Rendimiento" data-en="Leadership, <span>Innovation</span> & Performance" data-fr="Leadership, <span>Innovation</span> et Performance">Liderazgo, <span>Innovación</span> y Rendimiento</h1>
+            <p class="translatable" data-es="Entrenador UEFA Pro | Experiencia Internacional de Alto Nivel" data-en="UEFA Pro Coach | Top-Level International Experience" data-fr="Entraîneur UEFA Pro | Expérience Internationale de Haut Niveau">Entrenador UEFA Pro | Experiencia Internacional de Alto Nivel</p>
             <div class="botones-hero">
-                <a href="#trayectoria" class="btn btn-secundario">Ver Trayectoria</a>
-                <a href="#contacto" class="btn btn-principal">Hablemos</a>
+                <a href="#trayectoria" class="btn btn-principal translatable" data-es="<i class='fa-solid fa-route'></i> Ver Trayectoria" data-en="<i class='fa-solid fa-route'></i> View Career" data-fr="<i class='fa-solid fa-route'></i> Voir Carrière"><i class="fa-solid fa-route"></i> Ver Trayectoria</a>
             </div>
+        </div>
+
+        <!-- ESCUDOS EN EL INICIO (Incluido el Levante) -->
+        <div class="escudos-hero" data-aos="fade-up" data-aos-delay="500">
+            <img src="img/escudos/Villarreal CF.png" alt="Villarreal CF" title="Villarreal CF">
+            <img src="img/escudos/Athletic.png" alt="Athletic Club" title="Athletic Club">
+            <img src="img/escudos/Levante.png" alt="Levante UD" title="Levante UD">
+            <img src="img/escudos/rubin.png" alt="Rubin Kazan" title="Rubin Kazan">
+            <img src="img/escudos/karpaty.png" alt="Karpaty" title="FC Karpaty">
+            <img src="img/escudos/Debrecen.png" alt="Debreceni VSC" title="Debreceni VSC">
+            <img src="img/escudos/Castellon.png" alt="CD Castellón" title="CD Castellón">
         </div>
     </header>
 
-
-    <!-- SECCIÓN DE PERFIL -->
-    <section id="perfil" class="seccion-perfil">
-        <div class="perfil-contenedor">
-            
-            <!-- Foto -->
-            <div class="perfil-imagen">
-                <img src="img/perfil.jpg" alt="Foto de Sergio Navarro">
+    <!-- 2. PERFIL Y EDUCACIÓN -->
+    <section id="perfil" class="seccion-padding">
+        <div class="contenedor grid-2">
+            <div class="perfil-imagen" data-aos="fade-right">
+                <img src="img/perfil.jpg" alt="Sergio Navarro" onerror="this.src='https://via.placeholder.com/450x600/1e293b/10b981?text=Sergio+Navarro'">
                 <div class="decoracion-imagen"></div>
             </div>
-
-            <!-- Texto -->
-            <div class="perfil-texto">
-                <h2>Sobre <span>Mí</span></h2>
-                <h3>Entrenador UEFA Pro & Analista Táctico</h3>
-                <p>Soy un entrenador apasionado por el juego de posición, la presión alta y el desarrollo integral del futbolista. Mi objetivo es potenciar el talento individual al servicio del colectivo, creando equipos dominadores y competitivos.</p>
+            <div class="perfil-texto" data-aos="fade-left">
+                <h2 class="titulo-seccion translatable" data-es="Sobre <span>Sergio</span>" data-en="About <span>Sergio</span>" data-fr="À propos de <span>Sergio</span>">Sobre <span>Sergio</span></h2>
+                <h3 class="translatable" data-es="Formación y Desarrollo Integral" data-en="Education & Integral Development" data-fr="Formation et Développement Intégral">Formación y Desarrollo Integral</h3>
+                <p class="translatable" data-es="Exjugador profesional (Villarreal CF) convertido en técnico especialista en el desarrollo táctico y la mejora personal del futbolista a todos los niveles." data-en="Former professional player (Villarreal CF) turned specialist coach in tactical development and personal improvement of footballers at all levels." data-fr="Ancien joueur professionnel (Villarreal CF) devenu entraîneur spécialiste du développement tactique et de l'amélioration personnelle des footballeurs.">Exjugador profesional (Villarreal CF) convertido en técnico especialista en el desarrollo táctico y la mejora personal del futbolista a todos los niveles.</p>
                 
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <h4>UEFA Pro</h4>
-                        <p>Licencia Máxima</p>
+                <ul class="lista-educacion">
+                    <li><i class="fa-solid fa-graduation-cap"></i> <span class="translatable" data-es="Licencia UEFA Pro (RFEF 2008)" data-en="UEFA Pro Licence (RFEF 2008)" data-fr="Licence UEFA Pro (RFEF 2008)">Licencia UEFA Pro (RFEF 2008)</span></li>
+                    <li><i class="fa-solid fa-book"></i> <span class="translatable" data-es="Licenciatura en Ciencias de la Actividad Física y el Deporte (Univ. Valencia)" data-en="Degree in Sports Science (Univ. Valencia)" data-fr="Licence en Sciences du Sport (Univ. Valence)">Licenciatura en Ciencias de la Actividad Física y el Deporte (Univ. Valencia)</span></li>
+                    <li><i class="fa-solid fa-medal"></i> <span class="translatable" data-es="Máster en Alto Rendimiento en Deportes de Equipo (Fundación FC Barcelona)" data-en="Master in High Performance Team Sports (FC Barcelona Foundation)" data-fr="Master en Haute Performance Sportive (Fondation FC Barcelone)">Máster en Alto Rendimiento en Deportes de Equipo (Fundación FC Barcelona)</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5 IDEA DE JUEGO Y TÁCTICA -->
+    <section id="tactica" class="seccion-padding">
+        <div class="contenedor">
+            <h2 class="titulo-seccion text-center translatable" data-es="Identidad <span>Colectiva</span> y Táctica" data-en="Collective <span>Identity</span> & Tactics" data-fr="Identité <span>Collective</span> et Tactique">Identidad <span>Colectiva</span> y Táctica</h2>
+            <p class="text-center text-muted mb-4 translatable" data-es="Construcción de equipos altamente adaptativos a las exigencias de la competición, basados en 4 pilares fundamentales extraídos de los datos de rendimiento." data-en="Building highly adaptive teams to the demands of competition, based on 4 fundamental pillars extracted from performance data." data-fr="Construction d'équipes hautement adaptatives aux exigences de la compétition, basées sur 4 piliers fondamentaux.">Construcción de equipos altamente adaptativos a las exigencias de la competición, basados en 4 pilares fundamentales extraídos de los datos de rendimiento.</p>
+
+            <div class="grid-tactica">
+                <div class="tactica-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="pizarra">
+                        <svg viewBox="0 0 100 100" class="dibujo-tactico">
+                            <rect width="100" height="100" fill="#1e293b" rx="8"></rect>
+                            <circle cx="50" cy="50" r="20" stroke="#334155" stroke-width="2" fill="none"></circle>
+                            <circle cx="50" cy="50" r="3" fill="#fff"></circle>
+                            <circle cx="30" cy="30" r="4" fill="#10b981" class="jugador j-presion-1"></circle>
+                            <circle cx="70" cy="30" r="4" fill="#10b981" class="jugador j-presion-2"></circle>
+                            <circle cx="50" cy="80" r="4" fill="#10b981" class="jugador j-presion-3"></circle>
+                        </svg>
                     </div>
-                    <div class="stat-box">
-                        <h4>10+</h4>
-                        <p>Años Experiencia</p>
+                    <h3 class="translatable" data-es="Counter Pressing (Presión tras pérdida)" data-en="Counter Pressing" data-fr="Contre-pressing">Counter Pressing (Presión tras pérdida)</h3>
+                    <p class="translatable" data-es="Recuperaciones rápidas en campo contrario limitando el tiempo de reacción del rival." data-en="Fast recoveries in the opposition half limiting opponent reaction time." data-fr="Récupérations rapides dans le camp adverse.">Recuperaciones rápidas en campo contrario limitando el tiempo de reacción del rival.</p>
+                </div>
+
+                <div class="tactica-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pizarra">
+                        <svg viewBox="0 0 100 100" class="dibujo-tactico">
+                            <rect width="100" height="100" fill="#1e293b" rx="8"></rect>
+                            <line x1="33" y1="0" x2="33" y2="100" stroke="#334155" stroke-dasharray="4"></line>
+                            <line x1="66" y1="0" x2="66" y2="100" stroke="#334155" stroke-dasharray="4"></line>
+                            <path d="M50 80 L50 20" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow)" class="flecha-vertical"></path>
+                            <defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" /></marker></defs>
+                        </svg>
                     </div>
-                    <div class="stat-box">
-                        <h4>100%</h4>
-                        <p>Compromiso</p>
+                    <h3 class="translatable" data-es="Verticalidad en Pasillos Centrales" data-en="Vertical passes in central corridors" data-fr="Passes verticales dans l'axe">Verticalidad en Pasillos Centrales</h3>
+                    <p class="translatable" data-es="Conexiones veloces por el carril central para romper líneas defensivas eficientemente." data-en="Fast connections through the central lane to break defensive lines." data-fr="Connexions rapides dans l'axe pour briser les lignes.">Conexiones veloces por el carril central para romper líneas defensivas eficientemente.</p>
+                </div>
+
+                <div class="tactica-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pizarra">
+                        <svg viewBox="0 0 100 100" class="dibujo-tactico">
+                            <rect width="100" height="100" fill="#1e293b" rx="8"></rect>
+                            <rect x="25" y="0" width="50" height="30" stroke="#334155" stroke-width="2" fill="none"></rect>
+                            <path d="M20 70 Q 30 40 40 20" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3" class="flecha-llegada"></path>
+                            <path d="M80 70 Q 70 40 60 20" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3" class="flecha-llegada-2"></path>
+                            <path d="M50 80 L 50 30" stroke="#10b981" stroke-width="2" fill="none" class="flecha-llegada-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="translatable" data-es="Llegadas al Área" data-en="Arriving into the box" data-fr="Arrivées dans la surface">Llegadas al Área</h3>
+                    <p class="translatable" data-es="Ocupación racional de los espacios de remate con múltiples efectivos en zona de finalización." data-en="Rational occupation of finishing spaces with multiple players." data-fr="Occupation rationnelle des espaces de finition.">Ocupación racional de los espacios de remate con múltiples efectivos en zona de finalización.</p>
+                </div>
+
+                <div class="tactica-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pizarra">
+                        <svg viewBox="0 0 100 100" class="dibujo-tactico">
+                            <rect width="100" height="100" fill="#1e293b" rx="8"></rect>
+                            <line x1="0" y1="50" x2="100" y2="50" stroke="#334155" stroke-width="2"></line>
+                            <circle cx="50" cy="50" r="15" stroke="#334155" stroke-width="2" fill="none"></circle>
+                            <path d="M40 70 L 60 30" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="4" class="balon-largo"></path>
+                            <circle cx="60" cy="30" r="4" fill="#ef4444"></circle>
+                            <path d="M60 30 L 45 35" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow)" class="rebote"></path>
+                        </svg>
+                    </div>
+                    <h3 class="translatable" data-es="Segundas Jugadas" data-en="Second balls in opposition half" data-fr="Seconds ballons (Camp adverse)">Segundas Jugadas</h3>
+                    <p class="translatable" data-es="Dominio de las caídas y rechaces en bloque alto para reiniciar ataques constantes." data-en="Domination of rebounds in a high block to restart constant attacks." data-fr="Domination des rebonds en bloc haut pour relancer les attaques.">Dominio de las caídas y rechaces en bloque alto para reiniciar ataques constantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TRAYECTORIA (TIMELINE) -->
+    <section id="trayectoria" class="seccion-padding bg-alt">
+        <div class="contenedor">
+            <h2 class="titulo-seccion text-center translatable" data-es="Trayectoria <span>Profesional</span>" data-en="Professional <span>Career</span>" data-fr="Carrière <span>Professionnelle</span>">Trayectoria <span>Profesional</span></h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="img/escudos/Debrecen.png" alt="DVSC" class="timeline-logo">
+                            <h3>Debreceni VSC <span class="year">2025 - 2026</span></h3>
+                        </div>
+                        <h4 class="translatable" data-es="Primer Entrenador (NB1 Hungría)" data-en="Head Coach (NB1 Hungary)" data-fr="Entraîneur Principal (NB1 Hongrie)">Primer Entrenador (NB1 Hungría)</h4>
+                        <p class="translatable" data-es="Implementación de identidad colectiva, aumento del valor de mercado y debut de 18 canteranos." data-en="Implementation of collective identity, market value increase, and 18 academy player debuts." data-fr="Mise en place d'une identité collective et débuts de 18 jeunes.">Implementación de identidad colectiva, aumento del valor de mercado y debut de 18 canteranos.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="img/escudos/Athletic.png" alt="Athletic Club" class="timeline-logo">
+                            <h3>Athletic Club <span class="year">2022 - 2025</span></h3>
+                        </div>
+                        <h4 class="translatable" data-es="Director de Cantera 'Lezama'" data-en="Head of Academy 'Lezama'" data-fr="Directeur de l'Académie 'Lezama'">Director de Cantera 'Lezama'</h4>
+                        <p class="translatable" data-es="Liderando una de las canteras más prestigiosas de Europa." data-en="Leading one of the most prestigious academies in Europe." data-fr="À la tête de l'une des académies les plus prestigieuses d'Europe.">Liderando una de las canteras más prestigiosas de Europa.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <!-- ESCUDO LEVANTE AÑADIDO AQUÍ -->
+                            <img src="img/escudos/Levante.png" alt="Levante UD" class="timeline-logo">
+                            <h3>Levante UD <span class="year">2018 - 2022</span></h3>
+                        </div>
+                        <h4 class="translatable" data-es="Segundo Entrenador" data-en="Assistant Coach" data-fr="Entraîneur Adjoint">Segundo Entrenador</h4>
+                        <p class="translatable" data-es="Más de 125 partidos en Primera División Española." data-en="Over 125 matches in the Spanish First Division." data-fr="Plus de 125 matchs en Première Division Espagnole.">Más de 125 partidos en Primera División Española.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="img/escudos/karpaty.png" alt="Karpaty" class="timeline-logo">
+                            <h3>FC Karpaty <span class="year">2017 - 2018</span></h3>
+                        </div>
+                        <h4 class="translatable" data-es="Primer Entrenador (Premier League Ucrania)" data-en="Head Coach (Ukraine Premier League)" data-fr="Entraîneur Principal (Premier League Ukraine)">Primer Entrenador (Premier League Ucrania)</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="img/escudos/Villarreal CF.png" alt="Villarreal" class="timeline-logo">
+                            <img src="img/escudos/rubin.png" alt="Rubin" class="timeline-logo">
+                            <h3 class="translatable" data-es="Villarreal & Rubin Kazan <span class='year'>2011 - 2017</span>" data-en="Villarreal & Rubin Kazan <span class='year'>2011 - 2017</span>" data-fr="Villarreal & Rubin Kazan <span class='year'>2011 - 2017</span>">Villarreal & Rubin Kazan <span class="year">2011 - 2017</span></h3>
+                        </div>
+                        <p class="translatable" data-es="Director de Metodología (Villarreal). Segundo Entrenador en Rubin Kazan (1/4 Final Europa League)." data-en="Director of Methodology (Villarreal). Assistant Coach at Rubin Kazan (UEL 1/4 Final)." data-fr="Directeur Méthodologie (Villarreal). Adjoint au Rubin Kazan (1/4 Finale UEL).">Director de Metodología (Villarreal). Segundo Entrenador en Rubin Kazan (1/4 Final Europa League).</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Script para funciones futuras -->
+    <!-- 4. CUERPO TÉCNICO (STAFF MODALES Y TRADUCCIONES PROFUNDAS) -->
+    <section id="staff" class="seccion-padding">
+        <div class="contenedor">
+            <h2 class="titulo-seccion text-center translatable" data-es="Cuerpo <span>Técnico</span>" data-en="Coaching <span>Staff</span>" data-fr="Staff <span>Technique</span>">Cuerpo <span>Técnico</span></h2>
+            <p class="text-center text-muted mb-4 translatable" data-es="Haz clic en cada perfil para ver más detalles." data-en="Click on each profile for more details." data-fr="Cliquez sur chaque profil pour plus de détails.">Haz clic en cada perfil para ver más detalles.</p>
+            
+            <div class="grid-staff">
+                <!-- Pallares -->
+                <div class="staff-card" onclick="abrirModal(this)" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="staff-media"><video autoplay loop muted playsinline class="staff-video"><source src="img/Pallares.mp4" type="video/mp4"></video></div>
+                    <h3>Alex Pallares</h3>
+                    <h4 class="translatable" data-es="Segundo Entrenador" data-en="Assistant Coach" data-fr="Entraîneur Adjoint">Segundo Entrenador</h4>
+                    <p class="btn-mas-info translatable" data-es="+ Ver perfil completo" data-en="+ View full profile" data-fr="+ Voir le profil">+ Ver perfil completo</p>
+                    
+                    <div class="staff-detalles hidden">
+                        <ul class="lista-detalles">
+                            <li class="translatable" data-es="<strong>Edad:</strong> 46 años | Licencia UEFA PRO" data-en="<strong>Age:</strong> 46 years | UEFA PRO Licence" data-fr="<strong>Âge :</strong> 46 ans | Licence UEFA PRO"><strong>Edad:</strong> 46 años | Licencia UEFA PRO</li>
+                            <li class="translatable" data-es="<strong>170 partidos como 1er Entrenador:</strong> Top divisiones en Sudamérica (Ecuador, Venezuela)." data-en="<strong>170 matches as Head Coach:</strong> Top divisions in South America (Ecuador, Venezuela)." data-fr="<strong>170 matchs comme Entraîneur :</strong> Divisions supérieures en Am. du Sud (Équateur, Venezuela)."><strong>170 partidos como 1er Entrenador:</strong> Top divisiones en Sudamérica (Ecuador, Venezuela).</li>
+                            <li class="translatable" data-es="<strong>Torneos Internacionales:</strong> 10 partidos en CONMEBOL (6 Libertadores, 4 Sudamericana)." data-en="<strong>International Tournaments:</strong> 10 CONMEBOL matches (6 Libertadores, 4 Sudamericana)." data-fr="<strong>Tournois Internationaux :</strong> 10 matchs CONMEBOL (6 Libertadores, 4 Sudamericana)."><strong>Torneos Internacionales:</strong> 10 partidos en CONMEBOL (6 Libertadores, 4 Sudamericana).</li>
+                            <li class="translatable" data-es="<strong>Experiencia Previa:</strong> Entrenador U23 en Athletic Club, Rubin Kazan y Al Jazira. Director de Metodología en Rubin Kazan y Villarreal CF." data-en="<strong>Previous Experience:</strong> U23 Coach at Athletic Club, Rubin Kazan, and Al Jazira. Academy Director at Rubin Kazan and Villarreal CF." data-fr="<strong>Expérience Préalable :</strong> Entraîneur U23 (Athletic Club, Rubin Kazan, Al Jazira). Directeur d'Académie (Rubin Kazan, Villarreal CF)."><strong>Experiencia Previa:</strong> Entrenador U23 en Athletic Club, Rubin Kazan y Al Jazira. Director de Metodología en Rubin Kazan y Villarreal CF.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Robles -->
+                <div class="staff-card" onclick="abrirModal(this)" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="staff-media"><video autoplay loop muted playsinline class="staff-video"><source src="img/Robert.mp4" type="video/mp4"></video></div>
+                    <h3>Roberto Robles</h3>
+                    <h4 class="translatable" data-es="Segundo Entrenador" data-en="Assistant Coach" data-fr="Entraîneur Adjoint">Segundo Entrenador</h4>
+                    <p class="btn-mas-info translatable" data-es="+ Ver perfil completo" data-en="+ View full profile" data-fr="+ Voir le profil">+ Ver perfil completo</p>
+                    
+                    <div class="staff-detalles hidden">
+                        <ul class="lista-detalles">
+                            <li class="translatable" data-es="<strong>Edad:</strong> 38 años | Licencia UEFA PRO" data-en="<strong>Age:</strong> 38 years | UEFA PRO Licence" data-fr="<strong>Âge :</strong> 38 ans | Licence UEFA PRO"><strong>Edad:</strong> 38 años | Licencia UEFA PRO</li>
+                            <li class="translatable" data-es="<strong>135 Partidos Profesionales:</strong> 95 oficiales en España (Copa del Rey) y 35 en Hungría." data-en="<strong>135 Professional Matches:</strong> 95 official in Spain (Copa del Rey) and 35 in Hungary." data-fr="<strong>135 Matchs Professionnels :</strong> 95 officiels en Espagne (Coupe du Roi) et 35 en Hongrie."><strong>135 Partidos Profesionales:</strong> 95 oficiales en España (Copa del Rey) y 35 en Hungría.</li>
+                            <li class="translatable" data-es="<strong>Experiencia Head Coach:</strong> Real Oviedo (1er Equipo y U19), UP Langreo." data-en="<strong>Head Coach Experience:</strong> Real Oviedo (First Team & U19), UP Langreo." data-fr="<strong>Expérience Entraîneur :</strong> Real Oviedo (Équipe Première & U19), UP Langreo."><strong>Experiencia Head Coach:</strong> Real Oviedo (1er Equipo y U19), UP Langreo.</li>
+                            <li class="translatable" data-es="<strong>Dirección de Cantera:</strong> 10 temporadas como Director de Metodología en Athletic Club, Alavés, RC Deportivo, Real Oviedo." data-en="<strong>Academy Director:</strong> 10 seasons as Head of Methodology at Athletic Club, Alavés, RC Deportivo, Real Oviedo." data-fr="<strong>Direction d'Académie :</strong> 10 saisons comme Directeur de Méthodologie (Athletic Club, Alavés, RC Deportivo, Real Oviedo)."><strong>Dirección de Cantera:</strong> 10 temporadas como Director de Metodología en Athletic Club, Alavés, RC Deportivo, Real Oviedo.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mañas -->
+                <div class="staff-card" onclick="abrirModal(this)" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="staff-media"><video autoplay loop muted playsinline class="staff-video"><source src="img/MAÑAS.mp4" type="video/mp4"></video></div>
+                    <h3>Sergio Mañas</h3>
+                    <h4 class="translatable" data-es="Preparador Físico" data-en="Fitness Coach" data-fr="Préparateur Physique">Preparador Físico</h4>
+                    <p class="btn-mas-info translatable" data-es="+ Ver perfil completo" data-en="+ View full profile" data-fr="+ Voir le profil">+ Ver perfil completo</p>
+                    
+                    <div class="staff-detalles hidden">
+                        <ul class="lista-detalles">
+                            <li class="translatable" data-es="<strong>Edad:</strong> 38 años" data-en="<strong>Age:</strong> 38 years" data-fr="<strong>Âge :</strong> 38 ans"><strong>Edad:</strong> 38 años</li>
+                            <li class="translatable" data-es="<strong>Experiencia Internacional:</strong> 100 partidos en Venezuela y 10 en torneos CONMEBOL. 35 en Hungría." data-en="<strong>International Experience:</strong> 100 matches in Venezuela, 10 in CONMEBOL tournaments. 35 in Hungary." data-fr="<strong>Expérience Internationale :</strong> 100 matchs au Venezuela, 10 en tournois CONMEBOL. 35 en Hongrie."><strong>Experiencia Internacional:</strong> 100 partidos en Venezuela y 10 en torneos CONMEBOL. 35 en Hungría.</li>
+                            <li class="translatable" data-es="<strong>Experiencia en España:</strong> Levante UD (1ª Div Femenina), CD Castellón y Villarreal CF." data-en="<strong>Experience in Spain:</strong> Levante UD (1st Women's Div), CD Castellón, and Villarreal CF." data-fr="<strong>Expérience en Espagne :</strong> Levante UD (1ère Div Féminine), CD Castellón, et Villarreal CF."><strong>Experiencia en España:</strong> Levante UD (1ª Div Femenina), CD Castellón y Villarreal CF.</li>
+                            <li class="translatable" data-es="<strong>Alto Rendimiento:</strong> Ex-Jefe de Alto Rendimiento en la academia del CD Castellón." data-en="<strong>High Performance:</strong> Former Head of High Performance at CD Castellón academy." data-fr="<strong>Haute Performance :</strong> Ancien Chef de la Haute Performance à l'académie de CD Castellón."><strong>Alto Rendimiento:</strong> Ex-Jefe de Alto Rendimiento en la academia del CD Castellón.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Abdeslami -->
+                <div class="staff-card" onclick="abrirModal(this)" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="staff-media staff-media-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Abdelilah Abdeslami</h3>
+                    <h4 class="translatable" data-es="Fisioterapeuta" data-en="Physiotherapist" data-fr="Kinésithérapeute">Fisioterapeuta</h4>
+                    <p class="btn-mas-info translatable" data-es="+ Ver perfil completo" data-en="+ View full profile" data-fr="+ Voir le profil">+ Ver perfil completo</p>
+                    
+                    <div class="staff-detalles hidden">
+                        <ul class="lista-detalles">
+                            <li class="translatable" data-es="<strong>Edad:</strong> 27 años" data-en="<strong>Age:</strong> 27 years" data-fr="<strong>Âge :</strong> 27 ans"><strong>Edad:</strong> 27 años</li>
+                            <li class="translatable" data-es="<strong>Especialidad:</strong> Tratamiento de lesiones, retorno a la competición (RTP) y rehabilitación neuromusculoesquelética." data-en="<strong>Specialty:</strong> Injury treatment, Return to Play (RTP), and functional musculoskeletal rehabilitation." data-fr="<strong>Spécialité :</strong> Traitement des blessures, retour à la compétition (RTP) et rééducation fonctionnelle."><strong>Especialidad:</strong> Tratamiento de lesiones, retorno a la competición (RTP) y rehabilitación neuromusculoesquelética.</li>
+                            <li class="translatable" data-es="<strong>Formación:</strong> EPI (Electrólisis Percutánea) en cadáveres, experto en ecografía." data-en="<strong>Education:</strong> EPI (Percutaneous Electrolysis) on cadavers, ultrasound expert." data-fr="<strong>Formation :</strong> EPI (Électrolyse Percutanée) sur cadavres, expert en échographie."><strong>Formación:</strong> EPI (Electrólisis Percutánea) en cadáveres, experto en ecografía.</li>
+                            <li class="translatable" data-es="<strong>Experiencia:</strong> Jefe de Fisios en Federación Canaria y trabajo con atletas olímpicos." data-en="<strong>Experience:</strong> Head of Physios in Canary Federation and work with Olympic athletes." data-fr="<strong>Expérience :</strong> Chef des Kinés (Fédération des Canaries) et travail avec athlètes olympiques."><strong>Experiencia:</strong> Jefe de Fisios en Federación Canaria y trabajo con atletas olímpicos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VENTANA MODAL (POP-UP) -->
+    <div id="modal-overlay" class="modal-overlay" onclick="cerrarModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 5. METODOLOGÍA Y RESULTADOS -->
+    <section id="metodologia" class="seccion-padding bg-alt">
+        <div class="contenedor">
+            <h2 class="titulo-seccion text-center translatable" data-es="Metodología y <span>Resultados</span>" data-en="Methodology & <span>Results</span>" data-fr="Méthodologie et <span>Résultats</span>">Metodología y <span>Resultados</span></h2>
+            
+            <div class="stats-grid">
+                <div class="stat-box" data-aos="flip-left">
+                    <i class="fa-solid fa-arrow-trend-up stat-icon"></i>
+                    <h4>+64%</h4>
+                    <p class="translatable" data-es="Crecimiento del Valor de Mercado (DVSC)" data-en="Market Value Growth (DVSC)" data-fr="Croissance Valeur Marchande (DVSC)">Crecimiento del Valor de Mercado (DVSC)</p>
+                </div>
+                <div class="stat-box" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fa-solid fa-shield-halved stat-icon"></i>
+                    <h4>92%</h4>
+                    <p class="translatable" data-es="Disponibilidad (Solo 5.5 lesiones/1000h)" data-en="Availability (Only 5.5 injuries/1000h)" data-fr="Disponibilité (5.5 blessures/1000h)">Disponibilidad (Solo 5.5 lesiones/1000h)</p>
+                </div>
+                <div class="stat-box" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fa-solid fa-child-reaching stat-icon"></i>
+                    <h4>18</h4>
+                    <p class="translatable" data-es="Jugadores de cantera con el Primer Equipo" data-en="Academy players with First Team" data-fr="Jeunes avec l'équipe pro">Jugadores de cantera con el Primer Equipo</p>
+                </div>
+                <div class="stat-box" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fa-solid fa-chalkboard-user stat-icon"></i>
+                    <h4>400+</h4>
+                    <p class="translatable" data-es="Sesiones de Desarrollo Individual" data-en="Individual Development Sessions" data-fr="Séances de Développement Individuel">Sesiones de Desarrollo Individual</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
