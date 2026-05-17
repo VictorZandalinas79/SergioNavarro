@@ -97,3 +97,38 @@ document.addEventListener('keydown', function(event) {
         cerrarModal();
     }
 });
+
+// ========================================================
+//   MENÚ HAMBURGUESA PARA MÓVILES
+// ========================================================
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navContent = document.getElementById('nav-content');
+const navLinksClick = document.querySelectorAll('.nav-links a');
+
+// Abrir/Cerrar menú al tocar la hamburguesa
+mobileMenu.addEventListener('click', () => {
+    navContent.classList.toggle('active');
+    
+    // Cambiar icono de Hamburguesa (Barras) a 'X'
+    const icon = mobileMenu.querySelector('i');
+    if(navContent.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+    } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Cerrar menú automáticamente cuando se hace click en un enlace
+navLinksClick.forEach(link => {
+    link.addEventListener('click', () => {
+        navContent.classList.remove('active');
+        
+        // Restaurar icono a las 3 barras
+        const icon = mobileMenu.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    });
+});
