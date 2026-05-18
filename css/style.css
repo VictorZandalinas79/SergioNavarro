@@ -694,3 +694,218 @@ body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hi
         max-width: 220px; 
     }
 }
+
+/* ========================================================
+   FOTOS DE SERGIO EN EL HERO (PORTADA)
+   ======================================================== */
+.fotos-hero-container {
+    margin-bottom: 25px; /* Cambiado: Ahora separa las fotos del título de abajo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    z-index: 10 !important;
+}
+
+.foto-hero {
+    width: 100%;
+    max-width: 180px; 
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.foto-hero:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.3); 
+}
+
+/* --- AJUSTES PARA TELÉFONOS MÓVILES (FOTOS Y TÍTULO) --- */
+@media screen and (max-width: 768px) {
+    .fotos-hero-container {
+        margin-bottom: 15px; 
+        gap: 10px; 
+    }
+    
+    .foto-hero {
+        max-width: 90px; /* Un pelín más pequeñas en móvil para que respiren */
+        border-radius: 8px;
+    }
+
+    /* ESTO ARREGLA EL TÍTULO GIGANTE EN MÓVILES */
+    .hero-contenido h1 {
+        font-size: 34px; /* Título mucho más adaptable */
+        line-height: 1.2;
+    }
+    
+    .hero-contenido p {
+        font-size: 16px; /* Subtítulo ajustado al móvil */
+        margin-bottom: 25px;
+    }
+}
+
+/* ========================================================
+   PROCESO DE TRABAJO (IDEA DE JUEGO)
+   ======================================================== */
+.work-process-container {
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+
+.work-process-container h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+.work-process-container h3 span { color: var(--primary); }
+
+.wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.wp-card {
+    background: var(--bg-alt);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border-top: 3px solid var(--primary);
+    transition: transform 0.3s;
+}
+.wp-card:hover { transform: translateY(-5px); }
+
+.wp-card i {
+    font-size: 35px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+.wp-card h4 { margin-bottom: 10px; font-size: 18px; color: var(--text-main); }
+.wp-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+/* ========================================================
+   DETALLES DEBRECENI VSC (ESTRUCTURADO)
+   ======================================================== */
+.debrecen-detalles {
+    margin-top: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.debrecen-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.debrecen-logo {
+    height: 50px;
+    object-fit: contain;
+}
+
+.debrecen-header h3 {
+    color: var(--primary);
+    font-size: 26px;
+    margin: 0;
+}
+
+.debrecen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.d-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: rgba(11, 17, 32, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.d-icon {
+    font-size: 28px;
+    color: var(--primary);
+    margin-top: 2px;
+}
+
+.d-text h4 {
+    color: var(--text-main);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.d-text p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.d-text strong {
+    color: #fff;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ========================================================
+   SECCIÓN CONTACTO
+   ======================================================== */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contacto-card {
+    background: var(--bg-card);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+}
+
+.contacto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
+}
+
+.contacto-card i {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contacto-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.contacto-card p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.contacto-card a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contacto-card a:hover {
+    color: var(--primary);
+}
